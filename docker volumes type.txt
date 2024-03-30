@@ -1,0 +1,24 @@
+docker volumes types 
+_____________________
+_____________________
+types
+________
+1.volume
+2.bind mound 
+3.tmpfs mount
+
+volume
+__________
+how to check volume comment featured check 
+>>> sudo docker volume
+you see volume feutred
+
+
+how to volume list 
+>> sudo docker volume ls
+
+how to create new volume 
+ sudo docker voulume create volume name
+>> sudo docker volume create me
+
+

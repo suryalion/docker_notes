@@ -1,0 +1,82 @@
+how to create docker port numper create 
+>> sudo docker run -d -it --name myapp1 -p 81:80 httpd 
+you will check 
+
+one host difrend environment 
+>> sudo docker run -d -it --name myapp1 -p 81:80 httpd
+ip:81 >>it's worke 
+
+how to pull image with repository 
+>>> sudo docker pull pusapp:latest
+
+
+how to get docker image full information 
+>> sudo docker inspect httpd:latest
+
+how to check image commit history 
+>>> sudo docker history httpd:latest
+
+
+how to get image in backub file in local machine 
+>> sudo docker save httpd:latest > httpd.bkp.tar
+
+
+how to transwer image backub file in other machine 
+>> scp httpd.bkp.tar ec2-user@13.201.96.129:/home/ec2-user
+
+how to restore in  docker image
+>> sudo docker load -i httpd.bkp.tar
+
+how to delete docker image 
+>> sudo docker rmi httpd
+>> sudo docker rmi image id or image name 
+
+if you delete all the image use one comment 
+>> sudo docker rmi $(sudo docker images -a -q)
+
+
+
+how to  create image in container 
+1 first pull  pasic image template 
+example ubuntu image
+>> sudo docker pull upuntu
+2 then create container 
+>> sudo docker run -d -it --name ubuntu2 ubuntu:latest /bin/sh
+how inside the condainer
+>> sudo docker exec -it upuntu2 /bin/sh
+3 next any change add in condainer 
+4 then exit the container 
+5 then commit the condainer 
+6 sudo docker commit container id or name
+>> sudo docker commit 8798ghvfhuol customimage:2.1
+7 then check images you see new image for image name customerimage tag 2.1
+8 then you create same image convert to container
+>> sudo docker run -d -it --name ubuntu3 customimage:2.1
+then check changes
+>> sudo docker exec -it ubuntu3
+
+how to rename in image name 
+>> sudo docker tag old name new name 
+>> sudo docker tag editubuntu:1.2 surya123jaya/editubuntu:1.2
+
+
+how to image push in repositorys 
+you push the imagge definadly you get athendication for docker hup user id password 
+>> sudo docker login
+>> user
+>>> sudo docker push caustomimage:2.1
+sudo docker push imagename:tag 
+
+how to login private repositorys 
+>> sudo docker login private repository name 
+ex
+>> sudo docker login telus.docker.repo
+
+
+how to identify my current login repository 
+>> sudo docker info 
+
+
+
+
+
